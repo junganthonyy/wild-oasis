@@ -1,9 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
-import { getSettings } from "../../services/apiSettings";
 import useSettings from "./useSettings";
 import useUpdateSetting from "./useUpdateSetting";
 
@@ -24,8 +22,6 @@ function UpdateSettingsForm() {
 
   function handleUpdate(e, fieldName) {
     const { value } = e.target;
-
-    console.log(value);
 
     if (!value) return;
 
