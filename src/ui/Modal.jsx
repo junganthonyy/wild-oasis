@@ -1,14 +1,7 @@
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 import { createPortal } from "react-dom";
-import {
-  cloneElement,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { cloneElement, createContext, useContext, useState } from "react";
 import useOutsideClick from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
@@ -62,7 +55,7 @@ const Button = styled.button`
 
 const ModalContext = createContext();
 
-function Modal({ children, onClose }) {
+function Modal({ children }) {
   // tracks which window is actually open
   // we can have multiple buttons & windows in a single <Modal> app
   const [openName, setOpenName] = useState("");
@@ -89,10 +82,9 @@ function Open({ children, opens: windowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
-
   const ref = useOutsideClick(close);
 
-  if (name !== openName) return;
+  if (name !== openName) return null;
 
   return createPortal(
     <Overlay>
