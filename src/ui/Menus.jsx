@@ -94,7 +94,6 @@ function Toggle({ id }) {
 
   function handleClick(e) {
     const rect = e.target.closest("button").getBoundingClientRect();
-    console.log(rect);
     if (id === openId) close();
     else
       open(
