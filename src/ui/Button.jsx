@@ -53,6 +53,14 @@ const Button = styled.button`
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 
+  &:disabled {
+    background-color: var(--color-grey-500);
+
+    &:hover {
+      background-color: var(--color-grey-400);
+    }
+  }
+
   ${(props) => sizes[props.size]}
   ${(props) => variations[props.variation]}
 `;
