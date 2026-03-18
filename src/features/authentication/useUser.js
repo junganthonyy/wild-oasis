@@ -9,3 +9,5 @@ export default function useUser() {
 
   return { isLoading, user, isAuthenticated: user?.role === "authenticated" };
 }
+
+export { useUser };

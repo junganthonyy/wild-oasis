@@ -45,3 +45,45 @@ export async function logout() {
 
   if (error) throw new Error(error.message);
 }
+
+export async function updateCurrentUser({ password, fullName, avatar }) {
+  // update pw OR fullName
+  let updateData;
+  if (password) {
+    updateData = { password };
+  }
+  if (fullName) {
+    updateData = {
+      data: {
+        fullName,
+      },
+    };
+  }
+
+  const { data, error } = await supabase.auth.updateUser(updateData);
+
+  if (error) throw new Error(error.message);
+  if (!avatar) return data;
+
+  // upload avatar image
+  console.log("checkhere", data, avatar);
+  const fileName = `avatar-${data.user.id}-${Math.random()}`;
+
+  const { error: storageError } = await supabase.storage
+    .from("avatars")
+    .upload(fileName, avatar);
+
+  if (storageError) throw new Error(error.message);
+
+  // update avatar image in user
+  const { data: userWithAvatar, error: error2 } =
+    await supabase.auth.updateUser({
+      data: {
+        avatar: `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/avatars/${fileName}`,
+      },
+    });
+
+  if (error2) throw new Error(error2.message);
+
+  return userWithAvatar;
+}
