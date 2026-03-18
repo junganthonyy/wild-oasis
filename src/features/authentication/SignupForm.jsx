@@ -14,7 +14,7 @@ function SignupForm() {
     getValues,
     formState: { errors },
   } = useForm();
-  const { isLoading, signup } = useSignup();
+  const { signup } = useSignup();
 
   function onSubmit({ email, fullName, password }) {
     signup(

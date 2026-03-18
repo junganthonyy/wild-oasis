@@ -20,7 +20,6 @@ function DashboardLayout() {
   const {
     isLoading: isLoadingStays,
     confirmedStays,
-    stays,
     numDays,
   } = useRecentStays();
   const { cabins, isLoading: isLoadingCabins } = useCabins();
