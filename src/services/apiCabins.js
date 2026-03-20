@@ -4,7 +4,7 @@ export async function getCabins() {
   let { data, error } = await supabase.from("cabins").select("*");
 
   if (error) {
-    console.log(error);
+    console.error(error);
     throw new Error("Cabins could not be loaded.");
   }
 
@@ -15,7 +15,6 @@ export async function deleteCabin(id) {
   const { data, error } = await supabase.from("cabins").delete().eq("id", id);
 
   if (error) {
-    console.log(error);
     throw new Error(`Cabin with id: ${id} could not be deleted.`);
   }
 
@@ -24,8 +23,6 @@ export async function deleteCabin(id) {
 
 export async function createEditCabin(newCabin, id) {
   const supabasePath = import.meta.env.VITE_SUPABASE_URL;
-
-  console.log(newCabin);
 
   // check to see if we recieved a path to the db or a new file
   const hasImagePath = newCabin.image?.startsWith?.(supabasePath);
@@ -56,7 +53,6 @@ export async function createEditCabin(newCabin, id) {
   const { data, error } = await query.select().single();
 
   if (error) {
-    console.log(error);
     throw new Error(`Cabin could not be created.`);
   }
 

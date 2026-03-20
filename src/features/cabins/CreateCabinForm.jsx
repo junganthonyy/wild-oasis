@@ -58,7 +58,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 
   function onError(err) {
     // toast.error(errors);
-    console.log(err);
+    console.error(err);
   }
 
   return (
@@ -110,7 +110,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           {...register("discount", {
             required: "This field is required",
             validate: (value) => {
-              console.log(value, "  ", getValues().regularPrice);
               return (
                 value < getValues().regularPrice ||
                 "Discount should be less than regular price."

@@ -31,7 +31,6 @@ function BookingTable() {
           <Table.Body
             data={bookings}
             render={(booking) => {
-              // console.log(booking);
               return <BookingRow key={booking.id} booking={booking} />;
             }}
           />
