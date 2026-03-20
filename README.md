@@ -1,7 +1,8 @@
 # The Wild Oasis
 
 A mock hotel management system for employees of The Wild Oasis to manage bookings, cabins, and guests.
-Feel free to visit this page deployed here: https://the-wildest.netlify.app/dashboard
+Feel free to visit the login page deployed here: https://the-wildest.netlify.app/dashboard  
+If you would like the credentials to explore, please contact me at junganthonyy@gmail.com
 
 ## Technology Used
 * React
