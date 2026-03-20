@@ -1,8 +1,21 @@
-# React + Vite
+# The Wild Oasis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mock hotel management system for employees of The Wild Oasis to manage bookings, cabins, and guests.
+Feel free to visit this page deployed here: https://the-wildest.netlify.app/dashboard
 
-Currently, two official plugins are available:
+## Technology Used
+* React
+* React Query
+* React Router
+* Styled Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
+![Login page](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/login-page.PNG)
+![dashboard page](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/dashboard.PNG)
+![dashboard page but in light mode](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/dashboard-lightmode.PNG)
+![page showing a list of cabins](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/cabins.PNG)
+![form for creating new cabins](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/new-cabin.PNG)
+![table of all the bookings](https://github.com/junganthonyy/wild-oasis/blob/screenshots/screenshots/bookings.PNG)
+
+
+
